@@ -1,0 +1,89 @@
+$date
+    Oct  1, 2026  13:59:39
+$end
+$version
+    TOOL:	xmsim(64)	22.03-s012
+$end
+$timescale
+    1 ps
+$end
+
+$scope module tb_comparator $end
+$var reg       4 !    i_a [3:0] $end
+$var reg       4 "    i_b [3:0] $end
+$var wire      1 #    o_greater  $end
+$var wire      1 $    o_equal  $end
+$var wire      1 %    o_less  $end
+
+$scope module uut $end
+$var parameter 32 &    WIDTH $end
+$var wire      4 '    i_a [3:0] $end
+$var wire      4 (    i_b [3:0] $end
+$var wire      1 $    o_equal  $end
+$var wire      1 #    o_greater  $end
+$var wire      1 %    o_less  $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b100 &
+b0 !
+b0 "
+0#
+1$
+0%
+b0 '
+b0 (
+$end
+#10000
+b101 !
+b11 "
+b11 (
+b101 '
+0$
+1#
+#20000
+b10 !
+b1000 "
+b1000 (
+b10 '
+0#
+1%
+#30000
+b1111 !
+b1111 "
+b1111 (
+b1111 '
+1$
+0%
+#40000
+b1010 !
+b101 "
+b101 (
+b1010 '
+0$
+1#
+#50000
+b111 !
+b1001 "
+b1001 (
+b111 '
+0#
+1%
+#60000
+b1100 !
+b1100 "
+b1100 (
+b1100 '
+1$
+0%
+#70000
+b0 !
+b1111 "
+b1111 (
+b0 '
+0$
+1%
+#90000

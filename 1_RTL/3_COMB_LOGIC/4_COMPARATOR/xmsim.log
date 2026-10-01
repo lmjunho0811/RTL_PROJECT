@@ -1,0 +1,20 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Oct 01, 2026 at 13:59:39 KST
+xmsim
+    -MESS
+    tb_comparator
+
+Loading snapshot work_lib.tb_comparator:module .................... Done
+xcelium> run
+0	 0000	 0000	 0	 1	 0
+10000	 0101	 0011	 1	 0	 0
+20000	 0010	 1000	 0	 0	 1
+30000	 1111	 1111	 0	 1	 0
+40000	 1010	 0101	 1	 0	 0
+50000	 0111	 1001	 0	 0	 1
+60000	 1100	 1100	 0	 1	 0
+70000	 0000	 1111	 0	 0	 1
+Simulation complete via $finish(1) at time 90 NS + 0
+./tb_comparator.v:42   #10 $finish;
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Oct 01, 2026 at 13:59:39 KST  (total: 00:00:00)

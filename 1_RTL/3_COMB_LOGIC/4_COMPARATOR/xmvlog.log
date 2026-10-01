@@ -1,0 +1,15 @@
+xmvlog(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmvlog(64)	22.03-s012: Started on Oct 01, 2026 at 13:59:39 KST
+xmvlog
+    -MESS
+    -linedebug
+    ./comparator.v
+    ./tb_comparator.v
+
+file: ./comparator.v
+	module work_lib.comparator
+		errors: 0, warnings: 0
+file: ./tb_comparator.v
+	module work_lib.tb_comparator
+		errors: 0, warnings: 0
+TOOL:	xmvlog(64)	22.03-s012: Exiting on Oct 01, 2026 at 13:59:39 KST  (total: 00:00:00)
