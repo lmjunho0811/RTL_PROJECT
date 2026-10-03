@@ -1,0 +1,13 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Oct 03, 2026 at 16:20:59 KST
+xmsim
+    -MESS
+    tb_simple_register
+
+Loading snapshot work_lib.tb_simple_register:module .................... Done
+xcelium> run
+Read Data:  42
+Simulation complete via $finish(1) at time 40 NS + 0
+./tb_simple_register.v:53         $finish;
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Oct 03, 2026 at 16:20:59 KST  (total: 00:00:00)

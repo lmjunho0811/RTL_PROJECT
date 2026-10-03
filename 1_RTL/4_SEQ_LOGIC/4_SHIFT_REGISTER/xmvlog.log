@@ -1,0 +1,15 @@
+xmvlog(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmvlog(64)	22.03-s012: Started on Oct 03, 2026 at 15:26:48 KST
+xmvlog
+    -MESS
+    -linedebug
+    ./shift_register_sipo.v
+    ./tb_shift_register_sipo.v
+
+file: ./shift_register_sipo.v
+	module work_lib.shift_register_sipo
+		errors: 0, warnings: 0
+file: ./tb_shift_register_sipo.v
+	module work_lib.tb_shift_register_sipo
+		errors: 0, warnings: 0
+TOOL:	xmvlog(64)	22.03-s012: Exiting on Oct 03, 2026 at 15:26:48 KST  (total: 00:00:00)

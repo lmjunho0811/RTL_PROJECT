@@ -1,0 +1,41 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Oct 03, 2026 at 15:26:48 KST
+xmsim
+    -MESS
+    tb_shift_register_sipo
+
+Loading snapshot work_lib.tb_shift_register_sipo:module .................... Done
+xcelium> run
+time=0 | reset=0 | serial_in=0 | parallel_out=00000000
+time=15000 | reset=1 | serial_in=0 | parallel_out=00000000
+time=30000 | reset=1 | serial_in=1 | parallel_out=00000000
+time=35000 | reset=1 | serial_in=1 | parallel_out=00000001
+time=45000 | reset=1 | serial_in=1 | parallel_out=00000011
+time=55000 | reset=1 | serial_in=1 | parallel_out=00000111
+time=65000 | reset=1 | serial_in=1 | parallel_out=00001111
+time=75000 | reset=1 | serial_in=1 | parallel_out=00011111
+time=85000 | reset=1 | serial_in=1 | parallel_out=00111111
+time=90000 | reset=1 | serial_in=0 | parallel_out=00111111
+time=95000 | reset=1 | serial_in=0 | parallel_out=01111110
+time=100000 | reset=1 | serial_in=1 | parallel_out=01111110
+time=105000 | reset=1 | serial_in=1 | parallel_out=11111101
+time=115000 | reset=1 | serial_in=1 | parallel_out=11111011
+time=120000 | reset=1 | serial_in=0 | parallel_out=11111011
+time=125000 | reset=1 | serial_in=0 | parallel_out=11110110
+time=130000 | reset=1 | serial_in=1 | parallel_out=11110110
+time=135000 | reset=1 | serial_in=1 | parallel_out=11101101
+time=145000 | reset=1 | serial_in=1 | parallel_out=11011011
+time=150000 | reset=1 | serial_in=0 | parallel_out=11011011
+time=155000 | reset=1 | serial_in=0 | parallel_out=10110110
+time=160000 | reset=1 | serial_in=1 | parallel_out=10110110
+time=165000 | reset=1 | serial_in=1 | parallel_out=01101101
+time=170000 | reset=1 | serial_in=0 | parallel_out=01101101
+time=175000 | reset=1 | serial_in=0 | parallel_out=11011010
+time=185000 | reset=1 | serial_in=0 | parallel_out=10110100
+time=195000 | reset=1 | serial_in=0 | parallel_out=01101000
+time=205000 | reset=1 | serial_in=0 | parallel_out=11010000
+time=215000 | reset=1 | serial_in=0 | parallel_out=10100000
+Simulation complete via $finish(1) at time 220 NS + 0
+./tb_shift_register_sipo.v:42         #50 $finish;
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Oct 03, 2026 at 15:26:48 KST  (total: 00:00:00)
