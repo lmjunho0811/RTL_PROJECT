@@ -1,2 +1,2 @@
 # RTL_PROJECT
-RTL-to-DGSII Project
+RTL-to-GDSII Design and Implementation Project
