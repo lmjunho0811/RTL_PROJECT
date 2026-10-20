@@ -1,0 +1,11 @@
+Client record date: 2026-10-20 (Asia/Seoul)
+Xcelium 22.03-s012; headless xmvlog/xmelab/xmsim via make
+SUMMARY FSM1 PASS checks=172 transitions=6/6
+SUMMARY FSM2 PASS checks=172 transitions=6/6
+SUMMARY FSM3 PASS checks=172 transitions=6/6
+SUMMARY FSM PASS checks=187 transitions=10/10
+TOTAL checks=703 PASS
+Baseline: FSM1 FAIL state update at 56ns; FSM2 FAIL output at 56ns; FSM3 FAIL retained rd at 96ns; Mealy PASS.
+Existing dirty files outside FSM preserved: 28
+Waveform GUI, synthesis, timing, and FPGA hardware: NOT TESTED
+Tool logs retain the school server clock; record date above follows user client date.
