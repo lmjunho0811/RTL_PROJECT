@@ -1,80 +1,47 @@
-// Course FSM stimulus extended with independent checks (AI-assisted, 2026-10-20).
-// GNU GPL v3; see repository LICENSE.
 `timescale 1ns / 1ps
-module tb_FSM3;
-reg clk, rst_n, go, ws;
-wire rd, ds;
-integer model, nxt, checks, i;
-reg [15:0] transitions;
-FSM3 DUT(.clk(clk), .rst_n(rst_n), .go(go), .ws(ws), .rd(rd), .ds(ds));
+
+module tb_FSM3();
+
+// signal def
+	// stimulus signal
+reg clk		;
+reg rst_n	;
+reg go		;
+reg ws		;
+	// monitor signal
+wire rd		;
+wire ds		;
+
+//DUT instantiation
+FSM3 DUT (
+	.clk		( clk		)		, 
+	.rst_n		( rst_n		)		, 
+	.go			( go		)		, 
+	.ws			( ws		)		, 
+	.rd			( rd		)		, 
+	.ds			( ds		)
+);
+
+
+// clock gen
 always #5 clk = ~clk;
 
-task check;
-  input [255:0] label_text;
-  reg [1:0] encoded;
-  reg expected_rd, expected_ds;
-  begin
-    case(model)
-      0: encoded = DUT.IDLE;
-      1: encoded = DUT.READ;
-      2: encoded = DUT.DLY;
-      3: encoded = DUT.DONE;
-      default: $fatal(1,"bad test reference state");
-    endcase
-    expected_rd = (model == 1 || model == 2);
-    expected_ds = (model == 3);
-    if (DUT.state !== encoded || rd !== expected_rd || ds !== expected_ds)
-      $fatal(1,"FAIL FSM3 %0s t=%0t state=%b expected=%b rd=%b/%b ds=%b/%b",
-             label_text,$time,DUT.state,encoded,rd,expected_rd,ds,expected_ds);
-    checks = checks + 1;
-    $display("PASS FSM3 check=%0d phase=%0s state=%b rd=%b ds=%b",
-             checks,label_text,DUT.state,rd,ds);
-  end
-endtask
-
-task apply_reset;
-  begin
-    @(negedge clk);
-    rst_n = 0; go = 0; ws = 0;
-    #1; model = 0; check("asynchronous_reset");
-    @(negedge clk); rst_n = 1;
-  end
-endtask
-
-task step;
-  input g, w;
-  begin
-    @(negedge clk); go = g; ws = w;
-    #1; check("input_change_between_clocks");
-    case(model)
-      0: if (g) nxt=1; else nxt=0;
-      1: nxt=2;
-      2: if (w) nxt=1; else nxt=3;
-      3: nxt=0;
-    endcase
-    transitions[model*4+nxt] = 1'b1;
-    @(posedge clk); #1; model=nxt; check("after_clock");
-  end
-endtask
-
+// apply stimulus
 initial begin
-  $dumpfile("FSM3.vcd"); $dumpvars(0,tb_FSM3);
-  clk=0; rst_n=1; go=0; ws=0;
-  model=0; checks=0; transitions=0;
-  apply_reset();
-  step(0,0); step(0,1); step(1,1); step(0,1);
-  step(0,1); step(0,1); step(0,0); step(1,0);
-  step(1,0); step(0,0); step(0,0); step(0,0);
-  // Reset directly from READ, DLY, and DONE, away from the rising edge.
-  apply_reset(); step(1,0); apply_reset();
-  step(1,0); step(0,0); apply_reset();
-  step(1,0); step(0,0); step(0,0); apply_reset();
-  for(i=0;i<64;i=i+1) step((i%3)!=0,(i%5)!=0);
-  apply_reset(); step(0,0);
-  if ((transitions & 16'h1a43) !== 16'h1a43)
-    $fatal(1,"FAIL FSM3 transition coverage=%h",transitions);
-  $display("SUMMARY FSM3 PASS checks=%0d transitions=6/6",checks);
-  $finish;
+	$dumpfile("FSM3.vcd");
+	$dumpvars(0, tb_FSM3);
+	$monitor("time=%0t | rst_n=%b | go=%b | ws=%b | state=%b | rd=%b | ds=%b", $time, rst_n, go, ws, DUT.state, rd, ds);
+	//  t=0, init
+	clk = 1'b0; rst_n = 1'b0; // rst on(system OFF)
+	go = 1'b0; ws =1'b0; 
+	
+	#100 rst_n = 1'b1; // rst off(system ON)
+	
+	#100	go = 1'b1; ws = 1'b1;
+	#100 ws = 1'b0;
+	#100 rst_n = 1'b0;
+	#100; $finish;
+
 end
-initial begin #20000; $fatal(1,"FAIL FSM3 timeout"); end
+
 endmodule

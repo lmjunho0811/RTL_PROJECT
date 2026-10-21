@@ -1,0 +1,29 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Oct 21, 2026 at 11:13:26 KST
+xmsim
+    -MESS
+    tb_FSM
+
+Loading snapshot work_lib.tb_FSM:module .................... Done
+xcelium> run
+time=0 | rst_n=0 | din_bit=0 | state=000 | dout_bit=0
+time=100000 | rst_n=1 | din_bit=0 | state=000 | dout_bit=0
+time=105000 | rst_n=1 | din_bit=0 | state=001 | dout_bit=0
+time=115000 | rst_n=1 | din_bit=0 | state=011 | dout_bit=1
+time=130000 | rst_n=1 | din_bit=1 | state=011 | dout_bit=0
+time=135000 | rst_n=1 | din_bit=1 | state=010 | dout_bit=0
+time=145000 | rst_n=1 | din_bit=1 | state=100 | dout_bit=1
+time=160000 | rst_n=1 | din_bit=0 | state=100 | dout_bit=0
+time=165000 | rst_n=1 | din_bit=0 | state=001 | dout_bit=0
+time=175000 | rst_n=1 | din_bit=0 | state=011 | dout_bit=1
+time=200000 | rst_n=1 | din_bit=1 | state=011 | dout_bit=0
+time=205000 | rst_n=1 | din_bit=1 | state=010 | dout_bit=0
+time=215000 | rst_n=1 | din_bit=1 | state=100 | dout_bit=1
+time=250000 | rst_n=1 | din_bit=0 | state=100 | dout_bit=0
+time=255000 | rst_n=1 | din_bit=0 | state=001 | dout_bit=0
+time=265000 | rst_n=1 | din_bit=0 | state=011 | dout_bit=1
+time=350000 | rst_n=0 | din_bit=0 | state=000 | dout_bit=0
+Simulation complete via $finish(1) at time 2350 NS + 0
+./tb_FSM.v:52 	#2000; $finish;
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Oct 21, 2026 at 11:13:26 KST  (total: 00:00:00)

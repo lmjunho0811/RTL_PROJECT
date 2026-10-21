@@ -1,0 +1,37 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Oct 21, 2026 at 11:13:25 KST
+xmsim
+    -MESS
+    tb_FSM3
+
+Loading snapshot work_lib.tb_FSM3:module .................... Done
+xcelium> run
+time=0 | rst_n=0 | go=0 | ws=0 | state=00 | rd=0 | ds=0
+time=100000 | rst_n=1 | go=0 | ws=0 | state=00 | rd=0 | ds=0
+time=200000 | rst_n=1 | go=1 | ws=1 | state=00 | rd=0 | ds=0
+time=205000 | rst_n=1 | go=1 | ws=1 | state=01 | rd=1 | ds=0
+time=215000 | rst_n=1 | go=1 | ws=1 | state=10 | rd=1 | ds=0
+time=225000 | rst_n=1 | go=1 | ws=1 | state=01 | rd=1 | ds=0
+time=235000 | rst_n=1 | go=1 | ws=1 | state=10 | rd=1 | ds=0
+time=245000 | rst_n=1 | go=1 | ws=1 | state=01 | rd=1 | ds=0
+time=255000 | rst_n=1 | go=1 | ws=1 | state=10 | rd=1 | ds=0
+time=265000 | rst_n=1 | go=1 | ws=1 | state=01 | rd=1 | ds=0
+time=275000 | rst_n=1 | go=1 | ws=1 | state=10 | rd=1 | ds=0
+time=285000 | rst_n=1 | go=1 | ws=1 | state=01 | rd=1 | ds=0
+time=295000 | rst_n=1 | go=1 | ws=1 | state=10 | rd=1 | ds=0
+time=300000 | rst_n=1 | go=1 | ws=0 | state=10 | rd=1 | ds=0
+time=305000 | rst_n=1 | go=1 | ws=0 | state=11 | rd=1 | ds=1
+time=315000 | rst_n=1 | go=1 | ws=0 | state=00 | rd=1 | ds=1
+time=325000 | rst_n=1 | go=1 | ws=0 | state=01 | rd=1 | ds=1
+time=335000 | rst_n=1 | go=1 | ws=0 | state=10 | rd=1 | ds=1
+time=345000 | rst_n=1 | go=1 | ws=0 | state=11 | rd=1 | ds=1
+time=355000 | rst_n=1 | go=1 | ws=0 | state=00 | rd=1 | ds=1
+time=365000 | rst_n=1 | go=1 | ws=0 | state=01 | rd=1 | ds=1
+time=375000 | rst_n=1 | go=1 | ws=0 | state=10 | rd=1 | ds=1
+time=385000 | rst_n=1 | go=1 | ws=0 | state=11 | rd=1 | ds=1
+time=395000 | rst_n=1 | go=1 | ws=0 | state=00 | rd=1 | ds=1
+time=400000 | rst_n=0 | go=1 | ws=0 | state=00 | rd=0 | ds=0
+Simulation complete via $finish(1) at time 500 NS + 0
+./tb_FSM3.v:43 	#100; $finish;
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Oct 21, 2026 at 11:13:26 KST  (total: 00:00:01)
