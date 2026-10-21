@@ -1,0 +1,21 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Oct 21, 2026 at 12:03:16 KST
+xmsim
+    -MESS
+    tb_pipeline
+
+Loading snapshot work_lib.tb_pipeline:module .................... Done
+xcelium> run
+time=0 | rst_n=0 | in1=0 | in2=0 | in3=0 | piped_out=0
+time=10000 | rst_n=1 | in1=0 | in2=0 | in3=0 | piped_out=0
+time=30000 | rst_n=1 | in1=1 | in2=2 | in3=3 | piped_out=0
+time=40000 | rst_n=1 | in1=4 | in2=5 | in3=6 | piped_out=0
+time=45000 | rst_n=1 | in1=4 | in2=5 | in3=6 | piped_out=6
+time=50000 | rst_n=1 | in1=7 | in2=8 | in3=9 | piped_out=6
+time=55000 | rst_n=1 | in1=7 | in2=8 | in3=9 | piped_out=15
+time=65000 | rst_n=1 | in1=7 | in2=8 | in3=9 | piped_out=24
+time=100000 | rst_n=0 | in1=7 | in2=8 | in3=9 | piped_out=0
+Simulation complete via $finish(1) at time 200 NS + 0
+./tb_pipeline.v:46 	$finish;
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Oct 21, 2026 at 12:03:17 KST  (total: 00:00:01)
